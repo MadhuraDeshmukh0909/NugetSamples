@@ -1,0 +1,22 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: 'ExtensionSDKasNuGetPackage/NativePackage.Design/NativePackage.Design.csproj'
+    feedsToUse: 'select'
+    vstsFeed: '93a639f4-b1bc-44b8-bda1-a7ec880b3dbe'
+- task: VSBuild@1
+  inputs:
+    solution: 'ExtensionSDKasNuGetPackage/NativePackage.Design/NativePackage.Design.csproj'
+    platform: 'x64'
+    configuration: 'release'
+
+
+
