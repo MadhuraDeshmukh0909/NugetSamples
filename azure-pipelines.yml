@@ -15,7 +15,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: 'ExtensionSDKasNuGetPackage/NativePackage.Design/NativePackage.Design.csproj'
-    platform: 'x64'
+    platform: 'x86'
     configuration: 'release'
 
 
